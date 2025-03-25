@@ -10,7 +10,7 @@ int x = 10,
 
 int age = 23;
 
-long bigNumber = 1234567890123456789;
+long bigNumber = 1234567890123456789l;
 
 double negativeValue = -123.456;
 
