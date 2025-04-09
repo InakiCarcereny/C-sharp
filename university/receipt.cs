@@ -5,6 +5,7 @@ namespace sum_two_numbers
         static void Main(string[] args)
         {
             char forma_de_pago;
+            
             double monto_de_la_compra,
                    descuento,
                    total_a_pagar;
