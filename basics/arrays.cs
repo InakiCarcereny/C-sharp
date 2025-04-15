@@ -52,6 +52,8 @@ namespace sum_two_numbers
             }
 
             Console.WriteLine(angles_sum == 180 ? "Valid" : "Invalid");
+
+            Console.WriteLine("Press any key to exit...");
         }
     }
 }
