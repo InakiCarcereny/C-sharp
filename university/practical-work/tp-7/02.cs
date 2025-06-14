@@ -9,13 +9,10 @@ namespace sum_two_numbers
             public bool iliminacion_exterior;
         }
 
-        static void AjustarTemperatura()
+        static void AjustarTemperatura(ref Casa mi_casa)
         {
             bool exito;
-
             double temperatura_actual;
-
-            Casa mi_casa;
 
             do
             {
@@ -26,13 +23,10 @@ namespace sum_two_numbers
             mi_casa.temperatura = temperatura_actual;
         }
 
-        static void AjustarIluminacionInterior()
+        static void AjustarIluminacionInterior(ref Casa mi_casa)
         {
             bool exito;
-
             int iluminacion_interior_actual;
-
-            Casa mi_casa;
 
             do
             {
@@ -43,40 +37,32 @@ namespace sum_two_numbers
             mi_casa.iluminacion_interior = iluminacion_interior_actual;
         }
 
-        static void AjustarIluminacionExterior()
+        static void AjustarIluminacionExterior(ref Casa mi_casa)
         {
             string respuesta;
-
-            Casa mi_casa;
 
             Console.WriteLine("Ingrese [V] para prendido, [F] para apagado");
             respuesta = Console.ReadLine();
 
-            if (respuesta == "V")
-            {
-                mi_casa.iliminacion_exterior = true;
-            }
-            else
-            {
-                mi_casa.iliminacion_exterior = false;
-            }
+            mi_casa.iliminacion_exterior = (respuesta.ToUpper() == "V");
         }
 
-        static void VerConfig()
+        static void VerConfig(Casa mi_casa)
         {
-            Casa mi_casa;
-
             Console.WriteLine("La configuracion actual es:");
             Console.WriteLine($"Temperatura: {mi_casa.temperatura}");
             Console.WriteLine($"Iluminacion interior: {mi_casa.iluminacion_interior}");
             Console.WriteLine($"Iluminacion exterior: {mi_casa.iliminacion_exterior}");
         }
+
         static void Main(string[] args)
         {
-            AjustarTemperatura();
-            AjustarIluminacionInterior();
-            AjustarIluminacionExterior();
-            VerConfig();
+            Casa mi_casa = new Casa();
+
+            AjustarTemperatura(ref mi_casa);
+            AjustarIluminacionInterior(ref mi_casa);
+            AjustarIluminacionExterior(ref mi_casa);
+            VerConfig(mi_casa);
         }
     }
 }
